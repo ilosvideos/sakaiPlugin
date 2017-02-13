@@ -1,5 +1,7 @@
-#How to add a CKEEditor button in Sakai
-#https://confluence.sakaiproject.org/display/SAKDEV/Adding+new+plugins+to+CKEditor
+Part 1
+    [How to Setup Ilos LTI in Sakai](https://app.ilosvideos.com/view/6nm6edaDWKqC)
+
+Part 2
 
 Instructions for installing the Ilos Sakai plugin beta (This assumes you are on Sakai 11)
 
