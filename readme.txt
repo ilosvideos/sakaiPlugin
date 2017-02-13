@@ -63,19 +63,21 @@ If the line is commented or false, the antisamy security is high.
 If the line is true (and uncommented), the antisamy security is low. If this is the case there's nothing else you need to do.
 
 If the antisamy security is high.
-check {SAKAI_ROOT}/antisamy/
+check {CATALINA_ROOT}/antisamy/
 
 if the directory doesn't exists, create one.
 Inside check the file high-security-policy.xml
 
 If the file doesn't exists copy the one from
-{SAKAI_SOURCE}/kernel/kernel-impl\target\classes\antisamy\high-security-policy.xml
+{SAKAI_ROOT}/kernel/kernel-impl\target\classes\antisamy\high-security-policy.xml
 
-Open the {SAKAI_ROOT}/antisamy/high-security-policy.xml file
+Open the {CATALINA_ROOT}/antisamy/high-security-policy.xml file
 
 Around line 123 add
 app\.ilosvideos\.com/embed|
 after
 download\.macromedia\.com/pub|
+
+We included our file as an example. Do not use it directly as this will overwrite any other pollicies you might have.
 
 
