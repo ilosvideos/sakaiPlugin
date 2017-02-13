@@ -1,8 +1,3 @@
-Part 1
-    [How to Setup Ilos LTI in Sakai](https://app.ilosvideos.com/view/6nm6edaDWKqC)
-
-Part 2
-
 Instructions for installing the Ilos Sakai plugin beta (This assumes you are on Sakai 11)
 
 1. Copy the Ilos directory included in this zip to:
@@ -11,7 +6,11 @@ Instructions for installing the Ilos Sakai plugin beta (This assumes you are on 
 
 	this directory contains the Ilos plugin javascript file (plugin.js)
 
-2. Edit your ckeditor.launch.js file which can be found here
+2. At line 10 add your org api key.
+
+    var orgApiKey = 'YOUR ORG API KEY';
+
+3. Edit your ckeditor.launch.js file which can be found here
 
 	{SAKAI_ROOT}\webapps\library\editor\
 
@@ -43,7 +42,7 @@ Instructions for installing the Ilos Sakai plugin beta (This assumes you are on 
 	 
 	    ckconfig.extraPlugins+="image2,audiorecorder,movieplayer,wordcount,fmath_formula,autosave,fontawesome,notification,ilos";
 
-3. Re-deploy the reference project.
+4. Re-deploy the reference project.
 
     mvn clean install sakai:deploy -f reference/pom.xml
     mvn clean install sakai:deploy -f portal/pom.xml
@@ -51,7 +50,7 @@ Instructions for installing the Ilos Sakai plugin beta (This assumes you are on 
 Note: If you are having trouble editing your ckeditor.launch.js file we have also included a copy of ours in this zip
 so that you can see what an example looks like. 
 
-4. Configure Anti-Samy
+5. Configure Anti-Samy
 
 Anti-Samy validates potentially dangerous scripts and prevents them from being stored in the
 datastore, according to the security policy of Sakai.  This is a Sakai 10 new feature.  You need to

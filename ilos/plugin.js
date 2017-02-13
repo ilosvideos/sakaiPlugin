@@ -6,6 +6,14 @@
 var ckeditorId;
 (function() {
     var pluginName = 'ilos';
+    var serverPath = 'https://app.ilosvideos.com/lti/embed';
+    var orgApiKey = 'YOUR ORG API KEY';
+    var pageUrl = window.location.protocol + "//" + window.location.host;
+    var returnUrl = pageUrl+'/imsblis/service/return-url/site/'+parent.portal.siteId;
+
+    var launchUrl =  serverPath+'?oauth_consumer_key='+orgApiKey+'&launch_presentation_return_url='+encodeURI(returnUrl)
+        +"&tool_consumer_info_product_family_code=sakai";
+
     CKEDITOR.plugins.add(pluginName,
         {
             init: function(editor) {
@@ -15,7 +23,7 @@ var ckeditorId;
                 var width = 770;
                 CKEDITOR.dialog.addIframe(pluginName,
                     'Ilos Videos',
-                    '/access/basiclti/site/'+parent.portal.siteId+'/content:1',
+                    launchUrl,
                     width,
                     height,
                     function() {
@@ -29,6 +37,9 @@ var ckeditorId;
                         var $innerIframe = $iframeEl.contentDocument;
 
                         var $url = $innerIframe.getElementsByTagName("p")[0].innerHTML;
+
+                        console.log("test");
+                        console.log($url);
 
                         if ($url.includes("ilosvideos") >= 0)
                         {
