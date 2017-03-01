@@ -5,9 +5,9 @@
 //var CKEDITOR = CKEDITOR || {};
 var ckeditorId;
 (function() {
+    var orgApiKey = 'YOUR ORG API KEY'; //You can find your API key in
     var pluginName = 'ilos';
     var serverPath = 'https://app.ilosvideos.com/lti/embed';
-    var orgApiKey = 'YOUR ORG API KEY';
     var pageUrl = window.location.protocol + "//" + window.location.host;
     var returnUrl = pageUrl+'/imsblis/service/return-url/site/'+parent.portal.siteId;
 
@@ -37,9 +37,6 @@ var ckeditorId;
                         var $innerIframe = $iframeEl.contentDocument;
 
                         var $url = $innerIframe.getElementsByTagName("p")[0].innerHTML;
-
-                        console.log("test");
-                        console.log($url);
 
                         if ($url.includes("ilosvideos") >= 0)
                         {
