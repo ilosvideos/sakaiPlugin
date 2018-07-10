@@ -1,10 +1,10 @@
-Instructions for installing the Ilos Sakai plugin beta (This assumes you are on Sakai 11)
+Instructions for installing the VidGrid Sakai plugin beta (This assumes you are on Sakai 11)
 
-1. Copy the Ilos directory included in this zip to:
+1. Copy the VidGrid directory included in this zip to:
 	
 	{SAKAI_ROOT}/reference/library/src/webapp/editor/ckextraplugins
 
-	this directory contains the Ilos plugin javascript file (plugin.js)
+	this directory contains the VidGrid plugin javascript file (plugin.js)
 
 2. At line 10 add your org api key.
 
@@ -16,31 +16,31 @@ Instructions for installing the Ilos Sakai plugin beta (This assumes you are on 
 
 	You will need to change these lines:
 
-		after 'toolbar_Full:' around line 158 you will need to add 'ilos',  to the two lists starting with sakai.editor.enableResourceSearch
+		after 'toolbar_Full:' around line 158 you will need to add 'vidgrid',  to the two lists starting with sakai.editor.enableResourceSearch
 			
 		so that is looks something like this
 
             (sakai.editor.enableResourceSearch
-                ? ['AudioRecorder','ResourceSearch', 'Image','Movie','Table','HorizontalRule','Smiley','SpecialChar','fmath_formula','FontAwesome', 'ilos']
-                : ['AudioRecorder','Image','Movie','Table','HorizontalRule','Smiley','SpecialChar','fmath_formula','FontAwesome', 'ilos']),
+                ? ['AudioRecorder','ResourceSearch', 'Image','Movie','Table','HorizontalRule','Smiley','SpecialChar','fmath_formula','FontAwesome', 'vidgrid']
+                : ['AudioRecorder','Image','Movie','Table','HorizontalRule','Smiley','SpecialChar','fmath_formula','FontAwesome', 'vidgrid']),
 
-		This is a list of the icons in your ckeditor and this will add the ilos icon to CKEditor
+		This is a list of the icons in your ckeditor and this will add the vidgrid icon to CKEditor
 
 		next around line 218 you need to add this line
 
-	    CKEDITOR.plugins.addExternal('ilos',basePath+'ilos/', 'plugin.js');
+	    CKEDITOR.plugins.addExternal('vidgrid',basePath+'vidgrid/', 'plugin.js');
 
-	    This tells ckeditor where to find the ilos plugin
+	    This tells ckeditor where to find the vidgrid plugin
 	 
 	    Finally, around line 235 you need to add the plugin itself to do that add
 	 
-	    	,ilos
+	    	,vidgrid
 	 
 	    to the string following ckconfig.extraPlugins+=
 	    
 	    so for example ours reads
 	 
-	    ckconfig.extraPlugins+="image2,audiorecorder,movieplayer,wordcount,fmath_formula,autosave,fontawesome,notification,ilos";
+	    ckconfig.extraPlugins+="image2,audiorecorder,movieplayer,wordcount,fmath_formula,autosave,fontawesome,notification,vidgrid";
 
 4. Re-deploy the reference project.
 
@@ -75,7 +75,7 @@ If the file doesn't exists copy the one from
 Open the {CATALINA_ROOT}/antisamy/high-security-policy.xml file
 
 Around line 123 add
-app\.ilosvideos\.com/embed|
+app\.vidgrid\.com/embed|
 after
 download\.macromedia\.com/pub|
 

@@ -156,8 +156,8 @@ sakai.editor.editors.ckeditor.launch = function(targetId, config, w, h) {
                 ['BidiLtr', 'BidiRtl' ],
                 ['Link','Unlink','Anchor'],
                 (sakai.editor.enableResourceSearch
-                    ? ['AudioRecorder','ResourceSearch', 'Image','Movie','Table','HorizontalRule','Smiley','SpecialChar','fmath_formula','FontAwesome', 'ilos']
-                    : ['AudioRecorder','Image','Movie','Table','HorizontalRule','Smiley','SpecialChar','fmath_formula','FontAwesome', 'ilos']),
+                    ? ['AudioRecorder','ResourceSearch', 'Image','Movie','Table','HorizontalRule','Smiley','SpecialChar','fmath_formula','FontAwesome', 'vidgrid']
+                    : ['AudioRecorder','Image','Movie','Table','HorizontalRule','Smiley','SpecialChar','fmath_formula','FontAwesome', 'vidgrid']),
                 '/',
                 ['Styles','Format','Font','FontSize'],
                 ['TextColor','BGColor'],
@@ -215,8 +215,8 @@ sakai.editor.editors.ckeditor.launch = function(targetId, config, w, h) {
             CKEDITOR.plugins.addExternal('wordcount',webJars+'wordcount/4897cb23a9f2ca7fb6b792add4350fb9e2a1722c/', 'plugin.js');
             CKEDITOR.plugins.addExternal('notification',basePath+'notification/', 'plugin.js');
             CKEDITOR.plugins.addExternal('fontawesome',basePath+'fontawesome/', 'plugin.js');
-            //CKEDITOR.plugins.addExternal('ilos',basePath+'ilos/', 'plugin.js');
-            CKEDITOR.plugins.addExternal('ilos','http://localhost:8080/library/editor/ckextraplugins/ilos/', 'plugin.js');
+            //CKEDITOR.plugins.addExternal('vidgrid',basePath+'vidgrid/', 'plugin.js');
+            CKEDITOR.plugins.addExternal('vidgrid','http://localhost:8080/library/editor/ckextraplugins/vidgrid/', 'plugin.js');
             /*
              To enable after the deadline uncomment these two lines and add atd-ckeditor to toolbar
              and to extraPlugins. This also needs extra stylesheets.
@@ -233,7 +233,7 @@ sakai.editor.editors.ckeditor.launch = function(targetId, config, w, h) {
             //ckconfig.extraPlugins+="atd-ckeditor,";
             //ckconfig.contentsCss = [basePath+'atd-ckeditor/atd.css'];
 
-            ckconfig.extraPlugins+="image2,audiorecorder,movieplayer,wordcount,fmath_formula,autosave,fontawesome,ilos,,notification,ilos";
+            ckconfig.extraPlugins+="image2,audiorecorder,movieplayer,wordcount,fmath_formula,autosave,fontawesome,vidgrid,,notification,vidgrid";
 
             //SAK-29648
             ckconfig.contentsCss = [basePath+'/fontawesome/font-awesome/css/font-awesome.min.css'];
