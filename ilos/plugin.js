@@ -1,13 +1,13 @@
 /*
- * Copyright ©2016 Kaltura, Inc.
+ * Copyright ©2016 VidGrid, Inc.
  */
 
 //var CKEDITOR = CKEDITOR || {};
 var ckeditorId;
 (function() {
     var orgApiKey = 'YOUR ORG API KEY'; //You can find your API key in
-    var pluginName = 'ilos';
-    var serverPath = 'https://app.ilosvideos.com/lti/embed';
+    var pluginName = 'vidgrid';
+    var serverPath = 'https://app.vidgrid.com/lti/embed';
     var pageUrl = window.location.protocol + "//" + window.location.host;
     var returnUrl = pageUrl+'/imsblis/service/return-url/site/'+parent.portal.siteId;
 
@@ -22,7 +22,7 @@ var ckeditorId;
                 var height = 480;
                 var width = 770;
                 CKEDITOR.dialog.addIframe(pluginName,
-                    'Ilos Videos',
+                    'vidgrid',
                     launchUrl,
                     width,
                     height,
@@ -38,7 +38,7 @@ var ckeditorId;
 
                         var $url = $innerIframe.getElementsByTagName("p")[0].innerHTML;
 
-                        if ($url.includes("ilosvideos") >= 0)
+                        if ($url.includes("vidgrid") >= 0)
                         {
                             $url = $url.replace("External tool has finished: ", "");
 
@@ -49,12 +49,12 @@ var ckeditorId;
                         }
                     }
                 );
-                editor.addCommand(pluginName, new CKEDITOR.dialogCommand( 'ilos' ) );
+                editor.addCommand(pluginName, new CKEDITOR.dialogCommand( 'vidgrid' ) );
 
                 editor.ui.addButton(pluginName, {
                     label: pluginName,
                     command: pluginName,
-                    icon: 'https://s3.amazonaws.com/ilos-public-assets/ilos_icon_16x_16.png'
+                    icon: 'https://s3.amazonaws.com/ilos-public-assets/vidgrid/favicon-16x16.png'
                 });
             }
         }
