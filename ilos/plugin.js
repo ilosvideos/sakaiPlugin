@@ -1,7 +1,3 @@
-/*
- * Copyright ©2016 Kaltura, Inc.
- */
-
 //var CKEDITOR = CKEDITOR || {};
 var ckeditorId;
 (function() {
